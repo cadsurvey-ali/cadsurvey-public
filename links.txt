@@ -12,7 +12,7 @@ plans    = https://cadsurvey-ali.github.io/cadsurvey-public/plans.html
 download =
 channel  = https://www.youtube.com/@Eng.alicadsurvey
 # OWNER: YouTube playlist link
-playlist =
+playlist = https://www.youtube.com/playlist?list=PLG_EUgyWk9Eo
 group    = https://www.facebook.com/share/g/19bKaAppsA/?mibextid=wwXIfr
 instagram = https://www.instagram.com/cad.survey?vrfl=djl4OHp2bDZ1bTBv&utm_source=qr
 
