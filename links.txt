@@ -24,7 +24,7 @@ pay.zaincash.qr  = pay_zaincash.png
 pay.zaincash     = Scan the QR code with the Zain Cash app.
 pay.qi           =
 pay.other        = Outside Iraq: Western Union (see the plans page for the steps).
-contact.whatsapp =
+contact.whatsapp = 9647821010363
 
 # video of each tool (empty = the playlist / channel opens)
 video.CLABEL  =
