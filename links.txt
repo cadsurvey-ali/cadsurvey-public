@@ -25,6 +25,8 @@ pay.zaincash     = Scan the QR code with the Zain Cash app.
 pay.qi           =
 pay.other        = Outside Iraq: Western Union (see the plans page for the steps).
 contact.whatsapp = 9647821010363
+# wu.name = the receiver name for Western Union (the sender must write it EXACTLY like this)
+wu.name = Ali Dakhil
 
 # video of each tool (empty = the playlist / channel opens)
 video.CLABEL  =

@@ -18,7 +18,8 @@
    4. OWNER: offer price      the offer price in IQD         (offer banner)
    5. OWNER: seats left       how many offer places are left (offer banner)
    6. OWNER: WhatsApp         your WhatsApp number, ONE place (contact). Digits only in the link.
-   7. OWNER: WU name          your name in English letters exactly as in the passport (Western Union)
+   7. OWNER: WU name          the Western Union receiver name (now: Ali Dakhil) - change it in BOTH places
+                              marked OWNER: WU name (the text and data-copy) and in links.txt  wu.name
    8. The Zain Cash QR: upload a picture named  pay_zaincash.png  next to this file.
 
   Never write a card number or a full account number on this page.
@@ -125,6 +126,15 @@ html[data-l="ar"] .chips,html[data-l="msa"] .chips{direction:rtl}
 .kv div>span:first-child{color:var(--mute)}
 .kv .v{font-weight:700;text-align:end}
 .wu-name{direction:ltr;unicode-bidi:isolate;font-family:Consolas,"DejaVu Sans Mono",monospace;letter-spacing:.3px}
+/* Western Union yellow box: read before paying */
+.wub{background:#FFF8DC;border:2px solid var(--gold-line);border-radius:12px;padding:12px 14px;margin-top:4px}
+.wub .kv{background:#fff;border:1px solid #F0DC8A}
+.wub .kv div{border-bottom-color:#F0DC8A}
+.wub .wu-name{font-size:17px;font-weight:800;color:var(--head);background:var(--gold-soft);border-radius:5px;padding:0 8px;white-space:nowrap}
+.nm-row{display:flex;align-items:center;gap:8px}
+.cp{font:inherit;font-size:12px;font-weight:700;border:1px solid var(--gold);background:#fff;color:var(--gold-ink);border-radius:6px;padding:1px 9px;cursor:pointer}
+.cp.done{background:var(--ok-bg);color:var(--ok);border-color:#BFE3CA}
+.wub h4{margin:0 0 8px;font-size:15px;color:#5a3d00}
 ul.dot{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:14px}
 ul.dot li{position:relative;padding-inline-start:16px;line-height:1.6}
 ul.dot li::before{content:"";position:absolute;inset-inline-start:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
@@ -207,6 +217,14 @@ footer img{width:22px;height:22px;border-radius:5px;vertical-align:-6px;margin-i
     /* Zain Cash QR: if pay_zaincash.png is not uploaded yet, show a neutral box */
     var q=document.getElementById("qr");
     if(q){var im=q.querySelector("img");if(im.complete&&!im.naturalWidth)q.classList.add("missing");im.addEventListener("error",function(){q.classList.add("missing");});}
+    /* copy buttons (the Western Union receiver name) */
+    var c=document.querySelectorAll("[data-copy]");
+    for(var k=0;k<c.length;k++)c[k].addEventListener("click",function(){
+      var el=this,t=el.getAttribute("data-copy");
+      function done(){el.classList.add("done");setTimeout(function(){el.classList.remove("done");},1600);}
+      function old(){var a=document.createElement("textarea");a.value=t;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy");done();}catch(e){}document.body.removeChild(a);}
+      try{if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t).then(done,old);else old();}catch(e){old();}
+    });
   });
 })();
 </script>
@@ -309,18 +327,22 @@ footer img{width:22px;height:22px;border-radius:5px;vertical-align:-6px;margin-i
 
   <div class="pm wu">
     <h3><span class="lg wu">WU</span><span class="ar">من برّه العراق: ويسترن يونيون</span><span class="msa">من خارج العراق: ويسترن يونيون</span><span class="en">Outside Iraq: Western Union</span></h3>
+    <div class="wub" id="wu">
+    <h4><span class="ar">⚠ اقرا قبل ما تدفع</span><span class="msa">⚠ اقرأ قبل الدفع</span><span class="en">⚠ Read before you pay</span></h4>
     <div class="wu-grid">
       <div class="kv">
-        <div><span><span class="ar">اسم المستلم</span><span class="msa">اسم المستلم</span><span class="en">Receiver name</span></span><span class="v wu-name">—</span><!-- OWNER: WU name (English letters, exactly as in your passport) --></div>
+        <div><span><span class="ar">اسم المستلم</span><span class="msa">اسم المستلم</span><span class="en">Receiver name</span></span><span class="nm-row"><span class="v wu-name">Ali Dakhil</span><button type="button" class="cp" data-copy="Ali Dakhil"><span class="ar">نسخ</span><span class="msa">نسخ</span><span class="en">Copy</span></button></span><!-- OWNER: WU name (the text AND data-copy, exactly as the sender must write it) --></div>
         <div><span><span class="ar">البلد</span><span class="msa">البلد</span><span class="en">Country</span></span><span class="v"><span class="ar">العراق</span><span class="msa">العراق</span><span class="en">Iraq</span></span></div>
         <div><span><span class="ar">المبلغ</span><span class="msa">المبلغ</span><span class="en">Amount</span></span><span class="v"><span class="ar">السعر بالدولار فوق</span><span class="msa">السعر بالدولار أعلاه</span><span class="en">The USD price above</span></span></div>
         <div><span><span class="ar">رسوم التحويل</span><span class="msa">رسوم التحويل</span><span class="en">Transfer fee</span></span><span class="v"><span class="ar">على المرسل</span><span class="msa">يدفعها المرسل</span><span class="en">Paid by the sender</span></span></div>
       </div>
       <ul class="dot">
-        <li><span class="ar">اكتب اسم المستلم <b>بالضبط مثل ما بالجواز</b>، حرف بحرف. أي حرف يختلف، الحوالة ما تنستلم.</span><span class="msa">اكتب اسم المستلم <b>تمامًا كما في جواز السفر</b>، حرفًا بحرف. أي اختلاف في حرف واحد يمنع استلام الحوالة.</span><span class="en">Write the receiver name <b>exactly as in the passport</b>, letter by letter. One different letter and the money cannot be collected.</span></li>
+        <li><span class="ar">اكتب اسم المستلم <b>بالضبط</b> <b class="ltr">Ali Dakhil</b>، حرف بحرف. أي حرف يختلف، الحوالة ما تنستلم.</span><span class="msa">اكتب اسم المستلم <b>تمامًا</b> <b class="ltr">Ali Dakhil</b>، حرفًا بحرف. أي اختلاف في حرف واحد يمنع استلام الحوالة.</span><span class="en">Write the receiver name <b>exactly</b> <b>Ali Dakhil</b>, letter by letter. One different letter and the money cannot be collected.</span></li>
         <li><span class="ar">رسوم ويسترن يونيون يدفعها المرسل، حتى يوصل المبلغ كامل.</span><span class="msa">يدفع المرسل رسوم ويسترن يونيون، ليصل المبلغ كاملًا.</span><span class="en">The sender pays the Western Union fee, so the full amount arrives.</span></li>
         <li><span class="ar">دزلنا رقم الـ <b class="ltr">MTCN</b> (10 أرقام) واسمك مثل ما كتبته بالحوالة، ويا صورة الوصل.</span><span class="msa">أرسل لنا رقم <b class="ltr">MTCN</b> (10 أرقام) واسمك كما كتبته في الحوالة، مع صورة الإيصال.</span><span class="en">Send us the <b>MTCN</b> (10 digits) and your name as written on the transfer, with a photo of the receipt.</span></li>
+        <li><span class="ar">عادةً توصل بدقايق، وأحياناً تتأخر شوية للتدقيق. <b>إذا تأخرت، نفعّلك 7 أيام</b> لحد ما توصل.</span><span class="msa">تصل عادةً خلال دقائق، وقد تتأخر أحيانًا للتدقيق. <b>إذا تأخرت نفعّل لك 7 أيام</b> حتى تصل.</span><span class="en">It usually arrives in minutes; sometimes it is held for checks. <b>If it is late, we activate you for 7 days</b> until it arrives.</span></li>
       </ul>
+    </div>
     </div>
   </div>
 </div>
