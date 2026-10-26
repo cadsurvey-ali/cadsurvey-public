@@ -1,0 +1,51 @@
+# CAD & SURVEY Tools  |  By Eng. Ali
+# Links used by the tools: videos, channel, contact and the latest version.
+# One "key = value" per line. Lines starting with # are notes.
+#
+# source = the online copy of this file. When it is set, the tools read it in the background
+#          (new video links and new versions reach everyone without a new download).
+#          Example (GitHub):  https://raw.githubusercontent.com/<user>/cadsurvey-tools/main/links.txt
+source = https://raw.githubusercontent.com/cadsurvey-ali/cadsurvey-public/main/links.txt
+
+latest   = 2.4.0
+plans    = https://cadsurvey-ali.github.io/cadsurvey-public/plans.html
+download =
+channel  = https://www.youtube.com/@Eng.alicadsurvey
+# OWNER: YouTube playlist link
+playlist =
+group    = https://www.facebook.com/share/g/19bKaAppsA/?mibextid=wwXIfr
+instagram = https://www.instagram.com/cad.survey?vrfl=djl4OHp2bDZ1bTBv&utm_source=qr
+
+# Pro licence - shown in the activation window (CSPRO). Empty lines are hidden.
+#   pay.zaincash.qr = picture of the Zain Cash QR next to this file
+#   \n = new line
+pro.price        =
+pay.zaincash.qr  = pay_zaincash.png
+pay.zaincash     = Scan the QR code with the Zain Cash app.
+pay.qi           =
+pay.other        = Outside Iraq: Western Union (see the plans page for the steps).
+contact.whatsapp =
+
+# video of each tool (empty = the playlist / channel opens)
+video.CLABEL  =
+video.CLEAD   =
+video.CTRANS  =
+video.GEOUTM  =
+video.SREPORT =
+video.CCOMP   =
+video.CDIV    =
+video.CVOL    =
+video.CAREA   =
+video.ANUM    =
+video.CGRID   =
+video.PTX     =
+video.CPOINTS =
+video.OINFO   =
+video.CROUTE  =
+video.CPROF   =
+video.CBM     =
+video.CLEN    =
+video.CSEL    =
+video.CNOTE   =
+video.CSPROFILE =
+video.CSBAR   =

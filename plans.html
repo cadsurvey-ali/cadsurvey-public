@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ar" data-l="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Price &amp; plans | CAD &amp; SURVEY Tools</title>
+<meta name="description" content="CAD & SURVEY Tools PRO: yearly plan, what it includes, how to pay (Zain Cash, Qi Card, Western Union) and how to activate.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<!--
+  ======================================================================
+  OWNER GUIDE (Eng. Ali) - the places you change are marked  OWNER:
+  On github.com: open plans.html > pencil icon > search (Ctrl+F) "OWNER:"
+  > change the text next to it > "Commit changes". The page updates in ~1 minute.
+
+   1. OWNER: price            the yearly price in IQD        (plan card)
+   2. OWNER: price in USD     the yearly price for outside Iraq (plan card)
+   3. OWNER: launch offer     show / hide the offer banner   (add or remove the word  hidden)
+   4. OWNER: offer price      the offer price in IQD         (offer banner)
+   5. OWNER: seats left       how many offer places are left (offer banner)
+   6. OWNER: WhatsApp         your WhatsApp number, ONE place (contact). Digits only in the link.
+   7. OWNER: WU name          your name in English letters exactly as in the passport (Western Union)
+   8. The Zain Cash QR: upload a picture named  pay_zaincash.png  next to this file.
+
+  Never write a card number or a full account number on this page.
+  ======================================================================
+-->
+<style>
+:root{
+  --ink:#1C2430; --mute:#5A6472; --line:#E3E7EC; --soft:#F6F8FA; --head:#11161C; --bg:#EEF1F4;
+  --gold:#E0A800; --gold-ink:#7A5306; --gold-soft:#FFF4C2; --gold-line:#F5C518;
+  --ok:#2E7D46; --ok-bg:#E3F4E8; --warn:#C0392B; --warn-bg:#FDE8E7; --note:#1F4E79; --note-bg:#EEF3F9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,"Noto Sans Arabic","Noto Sans",Arial,sans-serif;font-size:15px;line-height:1.75}
+a{color:#9A7400}
+[hidden]{display:none!important}
+code,.ltr{direction:ltr;unicode-bidi:isolate}
+code{background:#F1F4F7;border-radius:4px;padding:0 6px;font-family:Consolas,"DejaVu Sans Mono",monospace;font-size:13px;white-space:nowrap}
+
+/* language: <html data-l="ar|msa|en"> -> .ar Iraqi, .msa Modern Standard Arabic, .en English */
+html[data-l="ar"] .en,html[data-l="ar"] .msa,html[data-l="msa"] .en,html[data-l="msa"] .ar,html[data-l="en"] .ar,html[data-l="en"] .msa{display:none!important}
+html[data-l="ar"] .dir,html[data-l="msa"] .dir{direction:rtl}
+
+/* header */
+header.top{position:sticky;top:0;z-index:5;background:var(--head);color:#E6EBF0;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.top .in{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:#E6EBF0;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:9px}
+.brand b{font-size:16px;letter-spacing:.3px;white-space:nowrap}.brand b span{color:var(--gold-line)}
+.brand small{display:block;font-size:12px;color:#9aa6b3;line-height:1.2}
+.tools-r{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nav{color:#C9D2DC;text-decoration:none;font-size:13px;font-weight:600;padding:3px 8px;border-radius:7px}
+.nav:hover,.nav.on{color:var(--gold-line)}
+.lang{display:flex;border:1px solid #3A4452;border-radius:7px;overflow:hidden;font-size:13px;cursor:pointer;user-select:none}
+.lang span{padding:3px 11px;color:#9aa6b3}.lang span.on{background:var(--gold-line);color:var(--head);font-weight:600}
+
+/* page */
+main{max-width:960px;margin:18px auto;padding:0 14px}
+.page{background:#fff;border:1px solid #D9DEE4;border-radius:14px;padding:22px 26px 28px}
+h1{font-size:27px;margin:0;line-height:1.35}
+.lead{font-size:16.5px;color:#3A4452;margin:6px 0 0}
+h2{font-size:19px;margin:34px 0 12px;padding-bottom:4px;border-bottom:3px solid var(--gold-soft);display:flex;align-items:center;gap:8px}
+h2 .n{background:var(--gold-line);color:var(--head);border-radius:50%;width:24px;height:24px;font-size:13px;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.pro{display:inline-block;background:var(--gold-line);color:var(--head);border-radius:5px;padding:0 7px;font-size:11px;font-weight:800;letter-spacing:.6px;line-height:19px;vertical-align:middle;font-family:"Segoe UI",Arial,sans-serif}
+.free{display:inline-block;background:var(--ok-bg);color:var(--ok);border:1px solid #BFE3CA;border-radius:5px;padding:0 6px;font-size:11px;font-weight:800;letter-spacing:.4px;line-height:17px;vertical-align:middle}
+
+/* launch offer */
+.offer{position:relative;display:flex;align-items:center;gap:14px;margin:18px 0 0;padding:14px 18px;border-radius:12px;background:linear-gradient(100deg,#2A2410,#11161C 70%);color:#F3EBD0;border:1px solid #4a3d10;overflow:hidden}
+.offer .ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--gold-line);color:var(--head);display:flex;align-items:center;justify-content:center;font-size:23px}
+.offer .tx{flex:1;min-width:0}
+.offer b.h{display:block;color:var(--gold-line);font-size:17px}
+.offer p{margin:2px 0 0;font-size:14.5px;line-height:1.6}
+.offer .seats{flex:none;text-align:center;background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.45);border-radius:10px;padding:6px 14px;line-height:1.25}
+.offer .seats b{display:block;color:var(--gold-line);font-size:24px}
+.offer .seats small{font-size:12px;color:#C9BE98}
+.price-offer{color:#fff;font-weight:700;white-space:nowrap}
+
+/* plan */
+.plan{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;margin-top:20px;border:1.5px solid var(--gold-line);border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(224,168,0,.13)}
+.plan .card{background:var(--head);color:#E6EBF0;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px}
+.plan .nm{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#C9D2DC}
+.plan .nm .pro{font-size:13px;line-height:22px;padding:0 9px}
+.amount{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px}
+.price{direction:ltr;unicode-bidi:isolate;font-size:36px;font-weight:800;color:var(--gold-line);line-height:1.15;letter-spacing:.3px;white-space:nowrap}
+.amount small{font-size:14px;color:#9aa6b3}
+.usd{font-size:13.5px;color:#C9D2DC}
+.price-usd{direction:ltr;unicode-bidi:isolate;font-weight:700;color:#fff;white-space:nowrap}
+.plan .card ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:4px;font-size:14px}
+.plan .card li{position:relative;padding-inline-start:22px}
+.plan .card li::before{content:"✓";position:absolute;inset-inline-start:0;color:var(--gold-line);font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--gold-line);color:var(--head);font-weight:700;text-decoration:none;border-radius:9px;padding:9px 16px;font-size:15px;margin-top:auto}
+.btn:hover{filter:brightness(1.06)}
+.btn.ghost{background:transparent;color:var(--gold-line);border:1px solid #4A4F57}
+.plan .inc{padding:18px 22px 20px;background:#fff}
+.inc h3{margin:0 0 8px;font-size:15.5px;display:flex;align-items:center;gap:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;direction:ltr}
+html[data-l="ar"] .chips,html[data-l="msa"] .chips{direction:rtl}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--soft);border-radius:8px;padding:2px 9px 2px 7px;font-size:13px;line-height:1.5}
+.chip b{direction:ltr;unicode-bidi:isolate;font-family:Consolas,"DejaVu Sans Mono",monospace;font-size:12.5px;background:var(--head);color:var(--gold-line);border-radius:5px;padding:0 6px}
+.chip span{color:#3A4452}
+.chips.f .chip b{background:var(--ok-bg);color:var(--ok)}
+.inc .sep{height:1px;background:var(--line);margin:14px 0}
+.trial{display:flex;gap:10px;align-items:flex-start;background:var(--gold-soft);border-radius:10px;padding:9px 12px;margin-top:14px;font-size:14px;line-height:1.6;color:var(--gold-ink)}
+.trial b{color:#5a3d00}
+
+/* payment */
+.pay{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pm{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff;display:flex;flex-direction:column;gap:8px;position:relative}
+.pm h3{margin:0;font-size:16px;display:flex;align-items:center;gap:9px}
+.pm .lg{flex:none;width:30px;height:30px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;font-family:"Segoe UI",Arial,sans-serif}
+.lg.zc{background:#111}.lg.qi{background:#0E5A9C}.lg.wu{background:#FFDD00;color:#111}
+.pm p{margin:0;font-size:14px;color:#3A4452;line-height:1.65}
+.pm .where{font-size:12px;font-weight:700;color:var(--mute)}
+.qrbox{align-self:center;width:170px;height:170px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:6px;display:flex;align-items:center;justify-content:center;text-align:center}
+.qrbox img{width:100%;height:100%;object-fit:contain;display:block}
+.qrbox .ph{display:none;font-size:12.5px;color:var(--mute);line-height:1.5;padding:8px}
+.qrbox.missing{border:2px dashed #CDD3DA;background:var(--soft)}
+.qrbox.missing img{display:none}.qrbox.missing .ph{display:block}
+.pm.wu{grid-column:1/-1}
+.wu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+.kv{background:var(--soft);border-radius:10px;padding:8px 12px;font-size:14px}
+.kv div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding:4px 0}
+.kv div:last-child{border:none}
+.kv div>span:first-child{color:var(--mute)}
+.kv .v{font-weight:700;text-align:end}
+.wu-name{direction:ltr;unicode-bidi:isolate;font-family:Consolas,"DejaVu Sans Mono",monospace;letter-spacing:.3px}
+ul.dot{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:14px}
+ul.dot li{position:relative;padding-inline-start:16px;line-height:1.6}
+ul.dot li::before{content:"";position:absolute;inset-inline-start:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.warn,.note{border-radius:10px;padding:8px 12px;margin:12px 0 0;font-size:14px;display:flex;gap:9px;align-items:flex-start;line-height:1.6}
+.warn{background:var(--warn-bg);color:var(--warn)}.note{background:var(--note-bg);color:var(--note)}
+.warn::before{content:"⚠";font-weight:700}.note::before{content:"i";font-weight:700;font-family:Georgia,serif;font-style:italic}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;position:relative;border:1px solid var(--line);border-radius:12px;padding:40px 14px 14px;background:#fff}
+.steps li::before{content:counter(s);position:absolute;top:10px;inset-inline-start:12px;background:var(--gold-line);color:var(--head);border-radius:50%;width:24px;height:24px;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.steps li .ic{position:absolute;top:9px;inset-inline-end:12px;font-size:19px;line-height:1}
+.steps b.t{display:block;font-size:15px;margin-bottom:3px}
+.steps p{margin:0;font-size:13.5px;color:#3A4452;line-height:1.6}
+.path{display:inline-block;direction:ltr;unicode-bidi:isolate;background:var(--head);color:var(--gold-line);border-radius:6px;padding:0 7px;font-family:Consolas,"DejaVu Sans Mono",monospace;font-size:12px;line-height:1.6;white-space:normal;margin:2px 0}
+
+/* small facts */
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fact{background:var(--soft);border-radius:10px;padding:10px 13px;font-size:14px;line-height:1.6}
+.fact b{display:block;color:var(--ink)}
+.fact span{color:#3A4452}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ct{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:11px;padding:10px 13px;text-decoration:none;color:var(--ink);background:#fff;min-width:0}
+.ct:hover{border-color:var(--gold-line);background:#FFFBEA}
+.ct svg{flex:none;width:30px;height:30px}
+.ct .c{min-width:0}
+.ct b{display:block;font-size:14.5px}
+.ct small{display:block;font-size:13px;color:var(--mute);direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere;text-align:start}
+html[data-l="ar"] .ct small,html[data-l="msa"] .ct small{text-align:right}
+
+footer{text-align:center;font-size:13px;color:var(--mute);padding:16px 14px 28px}
+footer a{color:var(--mute)}
+footer img{width:22px;height:22px;border-radius:5px;vertical-align:-6px;margin-inline-end:8px}
+
+@media (max-width:820px){
+  .plan{grid-template-columns:1fr}
+  .pay{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+  .top .in{padding:8px 12px}
+  .brand small{display:none}
+  main{padding:0 10px;margin-top:12px}
+  .page{padding:18px 16px 22px;border-radius:12px}
+  h1{font-size:23px}
+  .lead{font-size:15.5px}
+  .offer{flex-wrap:wrap;padding:13px 14px;gap:10px 12px}
+  .offer .ic{width:38px;height:38px;font-size:19px}
+  .offer .tx{flex-basis:calc(100% - 52px)}
+  .offer .seats{width:100%;display:flex;align-items:baseline;justify-content:center;gap:8px;padding:4px 10px}
+  .offer .seats b{display:inline;font-size:20px}
+  .price{font-size:32px}
+  .pay,.steps,.facts,.contact,.wu-grid{grid-template-columns:1fr}
+  .steps li{padding:12px 14px 12px 50px}
+  html[data-l="ar"] .steps li,html[data-l="msa"] .steps li{padding:12px 50px 12px 14px}
+  .steps li::before{top:12px}
+  .steps li .ic{display:none}
+}
+@media print{header.top,.lang{display:none!important}body{background:#fff}.page{border:none}}
+</style>
+<script>
+/* language switch (remembered on this browser). #en / #ar / #msa in the link also works. */
+(function(){
+  var KEY="cadsurvey-web-lang";
+  function get(){var h=(location.hash||"").replace("#","");if(h==="en"||h==="ar"||h==="msa")return h;try{var v=localStorage.getItem(KEY);if(v==="en"||v==="ar"||v==="msa")return v;}catch(e){}return "ar";}
+  function set(l){var d=document.documentElement;d.setAttribute("data-l",l);d.setAttribute("lang",l==="en"?"en":"ar");try{localStorage.setItem(KEY,l);}catch(e){}
+    var s=document.querySelectorAll(".lang span");for(var i=0;i<s.length;i++)s[i].className=s[i].getAttribute("data-v")===l?"on":"";}
+  set(get());
+  document.addEventListener("DOMContentLoaded",function(){
+    set(get());
+    var s=document.querySelectorAll(".lang span");
+    for(var i=0;i<s.length;i++)s[i].addEventListener("click",function(){set(this.getAttribute("data-v"));});
+    /* WhatsApp: the number is written once (id="wa"). Until it is set, WhatsApp links fall back to e-mail. */
+    var wa=document.getElementById("wa"),ok=wa&&/wa\.me\/\d{8,}$/.test(wa.getAttribute("href"));
+    var l=document.querySelectorAll("[data-wa]");
+    for(var j=0;j<l.length;j++)l[j].setAttribute("href",ok?wa.getAttribute("href"):"mailto:eng.alicadsurvey@gmail.com");
+    if(!ok&&wa){wa.hidden=true;}
+    /* Zain Cash QR: if pay_zaincash.png is not uploaded yet, show a neutral box */
+    var q=document.getElementById("qr");
+    if(q){var im=q.querySelector("img");if(im.complete&&!im.naturalWidth)q.classList.add("missing");im.addEventListener("error",function(){q.classList.add("missing");});}
+  });
+})();
+</script>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><img src="assets/logo.png" alt="CAD &amp; SURVEY"><div><b>CAD <span>&amp;</span> SURVEY Tools</b><small>By Eng. Ali · AutoCAD / Civil 3D</small></div></a>
+  <div class="tools-r">
+    <a class="nav" href="index.html"><span class="ar">الرئيسية</span><span class="msa">الرئيسية</span><span class="en">Home</span></a>
+    <a class="nav on" href="plans.html"><span class="ar">الأسعار</span><span class="msa">الأسعار</span><span class="en">Plans</span></a>
+    <div class="lang" role="group" aria-label="Language"><span data-v="ar" class="on">عراقي</span><span data-v="msa">فصحى</span><span data-v="en">EN</span></div>
+  </div>
+</div></header>
+
+<main class="dir"><div class="page">
+
+<h1><span class="ar">الأسعار والاشتراك</span><span class="msa">الأسعار والاشتراك</span><span class="en">Price &amp; plans</span></h1>
+<p class="lead"><span class="ar">8 أدوات مجانية دائماً، و12 أداة <b>PRO</b> بتجربة 30 يوم ببلاش. بعد التجربة، اشتراك سنوي واحد يفتحلك كل أدوات PRO.</span><span class="msa">8 أدوات مجانية دائمًا، و12 أداة <b>PRO</b> مع تجربة مجانية لمدة 30 يومًا. بعد التجربة، اشتراك سنوي واحد يفتح جميع أدوات PRO.</span><span class="en">8 tools are free forever, and 12 <b>PRO</b> tools come with a free 30-day trial. After the trial, one yearly subscription opens all the PRO tools.</span></p>
+
+<!-- ===================== OWNER: launch offer =====================
+     To HIDE the offer: change   <section class="offer" id="offer">   to   <section class="offer" id="offer" hidden>
+     To SHOW it again: remove the word  hidden
+-->
+<section class="offer" id="offer">
+  <div class="ic" aria-hidden="true">🎉</div>
+  <div class="tx">
+    <b class="h"><span class="ar">عرض الإطلاق</span><span class="msa">عرض الإطلاق</span><span class="en">Launch offer</span></b>
+    <p><span class="ar">لأول 50 مشترك: السنة الأولى بـ</span><span class="msa">لأول 50 مشتركًا: السنة الأولى بسعر</span><span class="en">For the first 50 subscribers: the first year for</span> <span class="price-offer ltr">— IQD</span><!-- OWNER: offer price --><span class="ar">. العرض يخلص من تخلص المقاعد.</span><span class="msa">. ينتهي العرض بانتهاء المقاعد.</span><span class="en">. The offer ends when the places run out.</span></p>
+  </div>
+  <div class="seats"><b class="ltr">50<!-- OWNER: seats left --></b><small><span class="ar">مقعد باقي من 50</span><span class="msa">مقعدًا متبقيًا من 50</span><span class="en">places left of 50</span></small></div>
+</section>
+
+<!-- ===================== the plan ===================== -->
+<section class="plan" id="plan">
+  <div class="card">
+    <div class="nm"><span class="pro">PRO</span><span class="ar">اشتراك سنوي</span><span class="msa">اشتراك سنوي</span><span class="en">Yearly</span></div>
+    <div class="amount"><span class="price">— IQD</span><!-- OWNER: price --><small><span class="ar">/ سنة</span><span class="msa">/ سنة</span><span class="en">/ year</span></small></div>
+    <div class="usd"><span class="ar">من برّه العراق:</span><span class="msa">من خارج العراق:</span><span class="en">Outside Iraq:</span> <span class="price-usd">— USD</span><!-- OWNER: price in USD --></div>
+    <ul>
+      <li><span class="ar">كل أدوات PRO الـ12</span><span class="msa">جميع أدوات PRO الاثنتي عشرة</span><span class="en">All 12 PRO tools</span></li>
+      <li><span class="ar">سنة كاملة من يوم إصدار الكود</span><span class="msa">سنة كاملة من يوم إصدار الرمز</span><span class="en">One full year from the day the code is issued</span></li>
+      <li><span class="ar">كل التحديثات خلال السنة، بدون كود جديد</span><span class="msa">جميع التحديثات خلال السنة، دون رمز جديد</span><span class="en">All updates during the year, no new code</span></li>
+      <li><span class="ar">وصل تفعيل رسمي ودعم بالواتساب والإيميل</span><span class="msa">إيصال تفعيل رسمي ودعم عبر واتساب والبريد</span><span class="en">An official receipt, support on WhatsApp and e-mail</span></li>
+      <li><span class="ar">التفعيل يشتغل بدون إنترنت</span><span class="msa">التفعيل يعمل دون إنترنت</span><span class="en">Activation works offline</span></li>
+    </ul>
+    <a class="btn" href="#activate"><span class="ar">شلون أشترك؟</span><span class="msa">كيف أشترك؟</span><span class="en">How to subscribe</span> <span aria-hidden="true">↓</span></a>
+  </div>
+
+  <div class="inc">
+    <h3><span class="pro">PRO</span><span class="ar">الـ12 أداة اللي ينفتحن بالاشتراك</span><span class="msa">الأدوات الاثنتا عشرة التي يفتحها الاشتراك</span><span class="en">The 12 tools the subscription opens</span></h3>
+    <div class="chips">
+      <span class="chip"><b>CLABEL</b><span class="ar">كتابة الإحداثيات</span><span class="msa">كتابة الإحداثيات</span><span class="en">Super Labels</span></span>
+      <span class="chip"><b>CTRANS</b><span class="ar">تحويل الإحداثيات</span><span class="msa">تحويل الإحداثيات</span><span class="en">Coord Transform</span></span>
+      <span class="chip"><b>GEOUTM</b><span class="ar">جغرافي ↔ UTM</span><span class="msa">جغرافي ↔ UTM</span><span class="en">Geo ↔ UTM, KML</span></span>
+      <span class="chip"><b>SREPORT</b><span class="ar">تقرير التصميم مقابل الحقل</span><span class="msa">تقرير التصميم مقابل الرفع</span><span class="en">Survey Report</span></span>
+      <span class="chip"><b>CBM</b><span class="ar">مكتبة البنج مارك</span><span class="msa">مكتبة النقاط المرجعية</span><span class="en">Benchmark Manager</span></span>
+      <span class="chip"><b>CNOTE</b><span class="ar">ملاحظات على الرسم</span><span class="msa">ملاحظات على الرسم</span><span class="en">Object Notes</span></span>
+      <span class="chip"><b>CSEL</b><span class="ar">تحديد ذكي</span><span class="msa">تحديد ذكي</span><span class="en">Survey Select</span></span>
+      <span class="chip"><b>CROUTE</b><span class="ar">مسار الأنابيب</span><span class="msa">مسار خط الأنابيب</span><span class="en">Pipeline Survey</span></span>
+      <span class="chip"><b>CVOL</b><span class="ar">الحجوم والكميات</span><span class="msa">الأحجام والكميات</span><span class="en">Volume Calc</span></span>
+      <span class="chip"><b>CPROF</b><span class="ar">البروفايلات</span><span class="msa">المقاطع الطولية</span><span class="en">Profile Maker</span></span>
+      <span class="chip"><b>CLEN</b><span class="ar">الأطوال ويا المجموع</span><span class="msa">الأطوال ومجموعها</span><span class="en">Length Calc</span></span>
+      <span class="chip"><b>CDIV</b><span class="ar">تقسيم الأراضي</span><span class="msa">تقسيم الأراضي</span><span class="en">Land Subdivision</span></span>
+    </div>
+    <div class="sep"></div>
+    <h3><span class="free"><span class="ar">مجانية</span><span class="msa">مجانية</span><span class="en">FREE</span></span><span class="ar">8 أدوات مجانية للأبد</span><span class="msa">8 أدوات مجانية دائمًا</span><span class="en">8 tools, free forever</span></h3>
+    <div class="chips f">
+      <span class="chip"><b>OINFO</b></span><span class="chip"><b>CLEAD</b></span><span class="chip"><b>CAREA</b></span><span class="chip"><b>ANUM</b></span>
+      <span class="chip"><b>CGRID</b></span><span class="chip"><b>PTX</b></span><span class="chip"><b>CPOINTS</b></span><span class="chip"><b>CCOMP</b></span>
+    </div>
+    <div class="trial"><span aria-hidden="true">⏳</span><span><span class="ar"><b>جرّب قبل ما تدفع:</b> تجربة وحدة 30 يوم لكل أدوات PRO، كلشي يشتغل وبدون علامة مائية. تبدي من أول مرة تستعمل أداة PRO، مو من يوم التنصيب.</span><span class="msa"><b>جرّب قبل أن تدفع:</b> تجربة واحدة لمدة 30 يومًا لجميع أدوات PRO، يعمل فيها كل شيء دون علامة مائية. تبدأ من أول استخدام لأداة PRO، لا من يوم التثبيت.</span><span class="en"><b>Try before you pay:</b> one 30-day trial for all PRO tools, everything works, no watermark. It starts the first time you use a PRO tool, not on the install day.</span></span></div>
+  </div>
+</section>
+
+<!-- ===================== payment ===================== -->
+<h2 id="pay"><span class="n">1</span><span class="ar">طرق الدفع</span><span class="msa">طرق الدفع</span><span class="en">How to pay</span></h2>
+<div class="pay">
+  <div class="pm">
+    <h3><span class="lg zc">ZC</span><span class="ar">زين كاش</span><span class="msa">زين كاش</span><span class="en">Zain Cash</span></h3>
+    <div class="where"><span class="ar">داخل العراق</span><span class="msa">داخل العراق</span><span class="en">Inside Iraq</span></div>
+    <!-- Zain Cash QR: upload the picture as  pay_zaincash.png  next to this file (same name as in links.txt) -->
+    <div class="qrbox" id="qr"><img src="pay_zaincash.png" alt="Zain Cash QR"><span class="ph"><span class="ar">رمز QR موجود بنافذة CSPRO، أو اطلبه بالواتساب</span><span class="msa">رمز QR موجود في نافذة CSPRO، أو اطلبه عبر واتساب</span><span class="en">The QR code is in the CSPRO window, or ask on WhatsApp</span></span></div>
+    <p><span class="ar">امسح الكود من تطبيق زين كاش وادفع مبلغ الاشتراك. نفس الكود موجود بنافذة <code>CSPRO</code>.</span><span class="msa">امسح الرمز بتطبيق زين كاش وادفع مبلغ الاشتراك. الرمز نفسه موجود في نافذة <code>CSPRO</code>.</span><span class="en">Scan the code with the Zain Cash app and pay the subscription. The same code is in the <code>CSPRO</code> window.</span></p>
+  </div>
+  <div class="pm">
+    <h3><span class="lg qi">Qi</span><span class="ar">كي كارد</span><span class="msa">بطاقة كي</span><span class="en">Qi Card</span></h3>
+    <div class="where"><span class="ar">داخل العراق</span><span class="msa">داخل العراق</span><span class="en">Inside Iraq</span></div>
+    <p><span class="ar">تفاصيل التحويل توصلك بالواتساب. راسلنا وكلّنا تريد تدفع بكي كارد.</span><span class="msa">تصلك تفاصيل التحويل عبر واتساب. راسلنا وأخبرنا أنك تريد الدفع ببطاقة كي.</span><span class="en">The transfer details are sent to you on WhatsApp. Message us and say you want to pay by Qi Card.</span></p>
+    <a class="btn ghost" data-wa href="mailto:eng.alicadsurvey@gmail.com" target="_blank" rel="noopener" style="margin-top:auto;color:var(--gold-ink);border-color:var(--gold-line)"><span class="ar">اطلب التفاصيل</span><span class="msa">اطلب التفاصيل</span><span class="en">Ask for the details</span></a>
+  </div>
+  <div class="pm">
+    <h3><span class="lg" style="background:var(--head);color:var(--gold-line)">✓</span><span class="ar">بعد الدفع</span><span class="msa">بعد الدفع</span><span class="en">After paying</span></h3>
+    <div class="where"><span class="ar">كل الطرق</span><span class="msa">جميع الطرق</span><span class="en">All methods</span></div>
+    <ul class="dot">
+      <li><span class="ar">صوّر وصل الدفع أو سكرين شوت.</span><span class="msa">التقط صورة لإيصال الدفع أو لقطة شاشة.</span><span class="en">Take a photo or a screenshot of the payment.</span></li>
+      <li><span class="ar">دزّه ويا طلب التفعيل من <code>CSPRO</code> (الخطوة 2 جوّه).</span><span class="msa">أرسلها مع طلب التفعيل من <code>CSPRO</code> (الخطوة 2 أدناه).</span><span class="en">Send it with the activation request from <code>CSPRO</code> (step 2 below).</span></li>
+      <li><span class="ar">اكتب رقم العملية أو الـ MTCN بخانة المرجع.</span><span class="msa">اكتب رقم العملية أو رقم MTCN في خانة المرجع.</span><span class="en">Write the payment number or the MTCN in the reference box.</span></li>
+    </ul>
+  </div>
+
+  <div class="pm wu">
+    <h3><span class="lg wu">WU</span><span class="ar">من برّه العراق: ويسترن يونيون</span><span class="msa">من خارج العراق: ويسترن يونيون</span><span class="en">Outside Iraq: Western Union</span></h3>
+    <div class="wu-grid">
+      <div class="kv">
+        <div><span><span class="ar">اسم المستلم</span><span class="msa">اسم المستلم</span><span class="en">Receiver name</span></span><span class="v wu-name">—</span><!-- OWNER: WU name (English letters, exactly as in your passport) --></div>
+        <div><span><span class="ar">البلد</span><span class="msa">البلد</span><span class="en">Country</span></span><span class="v"><span class="ar">العراق</span><span class="msa">العراق</span><span class="en">Iraq</span></span></div>
+        <div><span><span class="ar">المبلغ</span><span class="msa">المبلغ</span><span class="en">Amount</span></span><span class="v"><span class="ar">السعر بالدولار فوق</span><span class="msa">السعر بالدولار أعلاه</span><span class="en">The USD price above</span></span></div>
+        <div><span><span class="ar">رسوم التحويل</span><span class="msa">رسوم التحويل</span><span class="en">Transfer fee</span></span><span class="v"><span class="ar">على المرسل</span><span class="msa">يدفعها المرسل</span><span class="en">Paid by the sender</span></span></div>
+      </div>
+      <ul class="dot">
+        <li><span class="ar">اكتب اسم المستلم <b>بالضبط مثل ما بالجواز</b>، حرف بحرف. أي حرف يختلف، الحوالة ما تنستلم.</span><span class="msa">اكتب اسم المستلم <b>تمامًا كما في جواز السفر</b>، حرفًا بحرف. أي اختلاف في حرف واحد يمنع استلام الحوالة.</span><span class="en">Write the receiver name <b>exactly as in the passport</b>, letter by letter. One different letter and the money cannot be collected.</span></li>
+        <li><span class="ar">رسوم ويسترن يونيون يدفعها المرسل، حتى يوصل المبلغ كامل.</span><span class="msa">يدفع المرسل رسوم ويسترن يونيون، ليصل المبلغ كاملًا.</span><span class="en">The sender pays the Western Union fee, so the full amount arrives.</span></li>
+        <li><span class="ar">دزلنا رقم الـ <b class="ltr">MTCN</b> (10 أرقام) واسمك مثل ما كتبته بالحوالة، ويا صورة الوصل.</span><span class="msa">أرسل لنا رقم <b class="ltr">MTCN</b> (10 أرقام) واسمك كما كتبته في الحوالة، مع صورة الإيصال.</span><span class="en">Send us the <b>MTCN</b> (10 digits) and your name as written on the transfer, with a photo of the receipt.</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<p class="warn"><span class="ar">ما نطلب منك أبداً رقم بطاقتك أو رمز سري. ادفع بس بالطرق اللي بهاي الصفحة، أو اللي نرسلها إلك من رقمنا الرسمي.</span><span class="msa">لن نطلب منك أبدًا رقم بطاقتك أو أي رمز سري. ادفع فقط بالطرق المذكورة في هذه الصفحة، أو التي نرسلها لك من رقمنا الرسمي.</span><span class="en">We never ask for your card number or any secret code. Pay only by the ways on this page, or the ones we send you from our official number.</span></p>
+
+<!-- ===================== how to activate ===================== -->
+<h2 id="activate"><span class="n">2</span><span class="ar">شلون تفعّل</span><span class="msa">كيف تفعّل</span><span class="en">How to activate</span></h2>
+<ol class="steps">
+  <li><span class="ic" aria-hidden="true">💳</span><b class="t"><span class="ar">ادفع</span><span class="msa">ادفع</span><span class="en">Pay</span></b><p><span class="ar">بزين كاش أو كي كارد، أو ويسترن يونيون من برّه العراق. احتفظ بصورة الوصل.</span><span class="msa">بزين كاش أو بطاقة كي، أو ويسترن يونيون من خارج العراق. احتفظ بصورة الإيصال.</span><span class="en">By Zain Cash or Qi Card, or Western Union from outside Iraq. Keep a photo of the receipt.</span></p></li>
+  <li><span class="ic" aria-hidden="true">📨</span><b class="t"><span class="ar">اطلب التفعيل</span><span class="msa">اطلب التفعيل</span><span class="en">Request activation</span></b><p><span class="ar">بالأوتوكاد اكتب <span class="path">CSPRO › Request activation</span>، عبّي الاستمارة واضغط إرسال. تنفتح رسالة واتساب أو إيميل بيها رقم حاسبتك، ضيف صورة الوصل ودزها.</span><span class="msa">في AutoCAD اكتب <span class="path">CSPRO › Request activation</span>، واملأ النموذج واضغط إرسال. تُفتح رسالة واتساب أو بريد فيها معرّف حاسوبك، أرفق صورة الإيصال وأرسلها.</span><span class="en">In AutoCAD type <span class="path">CSPRO › Request activation</span>, fill in the form and press Send. A WhatsApp or e-mail message opens with your Computer ID: attach the payment photo and send it.</span></p></li>
+  <li><span class="ic" aria-hidden="true">🧾</span><b class="t"><span class="ar">نوافق ونرسلك الكود</span><span class="msa">نوافق ونرسل الرمز</span><span class="en">We approve</span></b><p><span class="ar">نتأكد من الدفع ونرسلك كود التفعيل <code>CSPRO-…</code> ويا وصل رسمي بالإيميل أو الواتساب.</span><span class="msa">نتحقق من الدفع ونرسل لك رمز التفعيل <code>CSPRO-…</code> مع إيصال رسمي عبر البريد أو واتساب.</span><span class="en">We check the payment and send your code <code>CSPRO-…</code> with an official receipt by e-mail or WhatsApp.</span></p></li>
+  <li><span class="ic" aria-hidden="true">🔓</span><b class="t"><span class="ar">الصق الكود</span><span class="msa">الصق الرمز</span><span class="en">Paste the code</span></b><p><span class="ar">انسخ الكود كله، افتح <code>CSPRO</code> واضغط <b>Paste</b> وبعدين <b>Activate</b>. خلص، أدوات PRO تشتغل سنة كاملة.</span><span class="msa">انسخ الرمز كاملًا، وافتح <code>CSPRO</code> واضغط <b>Paste</b> ثم <b>Activate</b>. تعمل أدوات PRO سنة كاملة.</span><span class="en">Copy the whole code, open <code>CSPRO</code>, press <b>Paste</b> then <b>Activate</b>. The PRO tools now run for a full year.</span></p></li>
+</ol>
+
+<h2 id="facts"><span class="n">3</span><span class="ar">لازم تعرف</span><span class="msa">معلومات مهمّة</span><span class="en">Good to know</span></h2>
+<div class="facts">
+  <div class="fact"><b><span class="ar">من تخلص السنة</span><span class="msa">عند انتهاء السنة</span><span class="en">When the year ends</span></b><span><span class="ar">بس أدوات PRO توگف. الأدوات المجانية ورسوماتك كلها سليمة. جدّد بكود جديد وكمّل.</span><span class="msa">تتوقف أدوات PRO فقط، وتبقى الأدوات المجانية ورسوماتك سليمة. جدّد برمز جديد وتابع.</span><span class="en">Only the PRO tools stop; the free tools and your drawings are untouched. Renew with a new code and go on.</span></span></div>
+  <div class="fact"><b><span class="ar">الكود لحاسبتك</span><span class="msa">الرمز لحاسوبك</span><span class="en">The code is for your computer</span></b><span><span class="ar">إذا بدّلت الحاسبة أو سوّيت فورمات، دزلنا رقم الحاسبة الجديد ويا كودك القديم ونرتّبها.</span><span class="msa">إذا غيّرت الحاسوب أو أعدت تهيئته، أرسل المعرّف الجديد مع رمزك القديم ونرتّب الأمر.</span><span class="en">New computer or a reset? Send the new Computer ID with your old code and we sort it out.</span></span></div>
+  <div class="fact"><b><span class="ar">التحديثات</span><span class="msa">التحديثات</span><span class="en">Updates</span></b><span><span class="ar">نصّب النسخ الجديدة عادي، التفعيل يبقى وما تحتاج كود جديد.</span><span class="msa">ثبّت الإصدارات الجديدة كالمعتاد، يبقى التفعيل ولا تحتاج إلى رمز جديد.</span><span class="en">Install new versions as usual: the activation stays, no new code needed.</span></span></div>
+  <div class="fact"><b><span class="ar">النسخة الأصلية بس</span><span class="msa">النسخة الأصلية فقط</span><span class="en">Only the original copy</span></b><span><span class="ar">نزّل الأدوات بس من القناة أو رابطنا المباشر. النسخ المعدّلة ممكن تطلع حسابات غلط بدون ما تحس.</span><span class="msa">احصل على الأدوات من القناة أو رابطنا المباشر فقط. النسخ المعدّلة قد تعطي حسابات خاطئة دون أن تلاحظ.</span><span class="en">Get the tools only from the channel or our direct link. Modified copies can give wrong results without you noticing.</span></span></div>
+</div>
+
+<!-- ===================== contact ===================== -->
+<h2 id="contact"><span class="n">4</span><span class="ar">تواصل ويانا</span><span class="msa">تواصل معنا</span><span class="en">Contact</span></h2>
+<div class="contact">
+  <!-- OWNER: WhatsApp - put your number in the link, digits only with the country code, e.g. https://wa.me/9647701234567
+       and the same number to show under it. Until it is set, this box stays hidden and WhatsApp buttons use e-mail. -->
+  <a class="ct" id="wa" href="https://wa.me/9647XXXXXXXXX" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#25D366"/><path d="M16 6.5a9.4 9.4 0 0 0-8.1 14.2L6.6 25.4l4.8-1.3A9.4 9.4 0 1 0 16 6.5Z" fill="#fff"/><path d="M12.6 11.3c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.8.9c.3.1.5.2.5.3.1.2.1.8-.2 1.5-.3.7-1.6 1.4-2.2 1.4-.6.1-1.2.2-3.9-.9-3.3-1.3-5.4-4.7-5.5-4.9-.2-.2-1.3-1.7-1.3-3.3 0-1.6.8-2.3 1.1-2.6Z" fill="#25D366"/></svg><span class="c"><b>WhatsApp</b><small>+964 7XX XXX XXXX</small></span></a>
+  <a class="ct" href="mailto:eng.alicadsurvey@gmail.com"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#11161C"/><path d="M7 10.5h18v11H7z" fill="none" stroke="#F5C518" stroke-width="1.8" stroke-linejoin="round"/><path d="m7.5 11 8.5 6.5 8.5-6.5" fill="none" stroke="#F5C518" stroke-width="1.8" stroke-linejoin="round"/></svg><span class="c"><b><span class="ar">الإيميل</span><span class="msa">البريد الإلكتروني</span><span class="en">E-mail</span></b><small>eng.alicadsurvey@gmail.com</small></span></a>
+  <a class="ct" href="https://www.youtube.com/@Eng.alicadsurvey" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#FF0000"/><path d="M13 11v10l8.5-5z" fill="#fff"/></svg><span class="c"><b><span class="ar">قناة اليوتيوب</span><span class="msa">قناة يوتيوب</span><span class="en">YouTube channel</span></b><small>@Eng.alicadsurvey</small></span></a>
+  <a class="ct" href="https://www.facebook.com/share/g/19bKaAppsA/?mibextid=wwXIfr" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1877F2"/><path d="M17.6 26v-8.2h2.7l.4-3.2h-3.1v-2c0-.9.3-1.6 1.6-1.6h1.7V8.2a22 22 0 0 0-2.5-.1c-2.4 0-4.1 1.5-4.1 4.2v2.3h-2.7v3.2h2.7V26z" fill="#fff"/></svg><span class="c"><b><span class="ar">كروب الفيسبوك</span><span class="msa">مجموعة فيسبوك</span><span class="en">Facebook group</span></b><small>CAD &amp; SURVEY</small></span></a>
+</div>
+
+</div></main>
+<footer class="dir"><img src="assets/logo.png" alt="">By Eng. Ali · CAD &amp; SURVEY · <a href="index.html"><span class="ar">الرئيسية</span><span class="msa">الرئيسية</span><span class="en">Home</span></a></footer>
+</body>
+</html>
