@@ -9,7 +9,7 @@ source = https://raw.githubusercontent.com/cadsurvey-ali/cadsurvey-public/main/l
 
 latest   = 2.4.1
 plans    = https://cadsurvey-ali.github.io/cadsurvey-public/plans.html
-download = https://github.com/cadsurvey-ali/cadsurvey-public/releases/tag/v2.4.1
+download = https://github.com/cadsurvey-ali/cadsurvey-public/releases/download/v2.4.1/CadSurveyTools_2.4.1_Setup.exe
 channel  = https://www.youtube.com/@Eng.alicadsurvey
 # OWNER: YouTube playlist link
 playlist = https://www.youtube.com/playlist?list=PLG_EUgyWk9Eo
