@@ -7,9 +7,9 @@
 #          Example (GitHub):  https://raw.githubusercontent.com/<user>/cadsurvey-tools/main/links.txt
 source = https://raw.githubusercontent.com/cadsurvey-ali/cadsurvey-public/main/links.txt
 
-latest   = 2.4.1
+latest   = 2.5.0
 plans    = https://cadsurvey-ali.github.io/cadsurvey-public/plans.html
-download = https://github.com/cadsurvey-ali/cadsurvey-public/releases/download/v2.4.1/CadSurveyTools_2.4.1_Setup.exe
+download = https://github.com/cadsurvey-ali/cadsurvey-public/releases/download/v2.5.0/CadSurveyTools_2.5.0_Setup.exe
 channel  = https://www.youtube.com/@Eng.alicadsurvey
 # OWNER: YouTube playlist link
 playlist = https://www.youtube.com/playlist?list=PLG_EUgyWk9Eo
