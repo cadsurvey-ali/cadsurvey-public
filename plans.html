@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Price &amp; plans | CAD &amp; SURVEY Tools</title>
-<meta name="description" content="CAD & SURVEY Tools PRO: yearly plan, what it includes, how to pay (Zain Cash, Qi Card, Western Union) and how to activate.">
+<meta name="description" content="CAD & SURVEY Tools PRO: 6-month and yearly plans, what it includes, how to pay (Zain Cash, Qi Card, Western Union) and how to activate.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <!--
   ======================================================================
@@ -12,10 +12,10 @@
   On github.com: open plans.html > pencil icon > search (Ctrl+F) "OWNER:"
   > change the text next to it > "Commit changes". The page updates in ~1 minute.
 
-   1. OWNER: price            the yearly price in IQD        (plan card)
-   2. OWNER: price in USD     the yearly price for outside Iraq (plan card)
+   1. OWNER: price            the price in IQD  (two cards: 6 months + yearly; yearly card also has OWNER: saving)
+   2. OWNER: price in USD     the price for outside Iraq (two cards)
    3. OWNER: launch offer     show / hide the offer banner   (add or remove the word  hidden)
-   4. OWNER: offer price      the offer price in IQD         (offer banner)
+   4. OWNER: offer price      the offer prices (yearly + 6 months, IQD and USD) (offer banner)
    5. OWNER: seats left       how many offer places are left (offer banner)
    6. OWNER: WhatsApp         your WhatsApp number, ONE place (contact). Digits only in the link.
    7. OWNER: WU name          the Western Union receiver name (now: Ali Dakhil) - change it in BOTH places
@@ -76,8 +76,22 @@ h2 .n{background:var(--gold-line);color:var(--head);border-radius:50%;width:24px
 .offer .seats b{display:block;color:var(--gold-line);font-size:24px}
 .offer .seats small{font-size:12px;color:#C9BE98}
 .price-offer{color:#fff;font-weight:700;white-space:nowrap}
+.offer .was{color:#9a917a;font-size:.9em;margin-inline-start:2px}
+.offer .offer-usd{display:inline-block;margin-top:4px;color:#C9BE98;font-size:13px}
 
 /* plan */
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;align-items:stretch}
+.tiers .card{position:relative;background:var(--head);color:#E6EBF0;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;border-radius:14px;border:1.5px solid #3A4048}
+.tiers .card.best{order:-1;border-color:var(--gold-line);box-shadow:0 4px 18px rgba(224,168,0,.22)}
+.tiers .badge{position:absolute;top:-12px;inset-inline-end:16px;background:var(--gold-line);color:var(--head);font-weight:800;font-size:12.5px;border-radius:20px;padding:2px 11px}
+.tiers .save{font-size:13px;color:#9fe0a8;font-weight:700}
+.tiers .nm{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#C9D2DC}
+.tiers .nm .pro{font-size:13px;line-height:22px;padding:0 9px}
+.tiers .card ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:4px;font-size:14px}
+.tiers .card li{position:relative;padding-inline-start:22px}
+.tiers .card li::before{content:"✓";position:absolute;inset-inline-start:0;color:var(--gold-line);font-weight:700}
+.plan.inc-only{grid-template-columns:1fr;margin-top:14px}
+@media (max-width:720px){.tiers{grid-template-columns:1fr}}
 .plan{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;margin-top:20px;border:1.5px solid var(--gold-line);border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(224,168,0,.13)}
 .plan .card{background:var(--head);color:#E6EBF0;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px}
 .plan .nm{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#C9D2DC}
@@ -242,37 +256,55 @@ footer img{width:22px;height:22px;border-radius:5px;vertical-align:-6px;margin-i
 <main class="dir"><div class="page">
 
 <h1><span class="ar">الأسعار والاشتراك</span><span class="msa">الأسعار والاشتراك</span><span class="en">Price &amp; plans</span></h1>
-<p class="lead"><span class="ar">8 أدوات مجانية دائماً، و12 أداة <b>PRO</b> بتجربة 30 يوم ببلاش. بعد التجربة، اشتراك سنوي واحد يفتحلك كل أدوات PRO.</span><span class="msa">8 أدوات مجانية دائمًا، و12 أداة <b>PRO</b> مع تجربة مجانية لمدة 30 يومًا. بعد التجربة، اشتراك سنوي واحد يفتح جميع أدوات PRO.</span><span class="en">8 tools are free forever, and 12 <b>PRO</b> tools come with a free 30-day trial. After the trial, one yearly subscription opens all the PRO tools.</span></p>
+<p class="lead"><span class="ar">8 أدوات مجانية دائماً، و12 أداة <b>PRO</b> بتجربة 30 يوم ببلاش. بعد التجربة، اشتراك 6 أشهر أو سنة يفتحلك كل أدوات PRO.</span><span class="msa">8 أدوات مجانية دائمًا، و12 أداة <b>PRO</b> مع تجربة مجانية لمدة 30 يومًا. بعد التجربة، اشتراك لستة أشهر أو لسنة يفتح جميع أدوات PRO.</span><span class="en">8 tools are free forever, and 12 <b>PRO</b> tools come with a free 30-day trial. After the trial, a 6-month or a yearly subscription opens all the PRO tools.</span></p>
 
 <!-- ===================== OWNER: launch offer =====================
      To HIDE the offer: change   <section class="offer" id="offer">   to   <section class="offer" id="offer" hidden>
      To SHOW it again: remove the word  hidden
 -->
-<section class="offer" id="offer">
+<section class="offer" id="offer" hidden>
   <div class="ic" aria-hidden="true">🎉</div>
   <div class="tx">
     <b class="h"><span class="ar">عرض الإطلاق</span><span class="msa">عرض الإطلاق</span><span class="en">Launch offer</span></b>
-    <p><span class="ar">لأول 50 مشترك: السنة الأولى بـ</span><span class="msa">لأول 50 مشتركًا: السنة الأولى بسعر</span><span class="en">For the first 50 subscribers: the first year for</span> <span class="price-offer ltr">— IQD</span><!-- OWNER: offer price --><span class="ar">. العرض يخلص من تخلص المقاعد.</span><span class="msa">. ينتهي العرض بانتهاء المقاعد.</span><span class="en">. The offer ends when the places run out.</span></p>
+    <p><span class="ar">لأول 50 مشترك: السنة الأولى بـ</span><span class="msa">لأول 50 مشتركًا: السنة الأولى بسعر</span><span class="en">For the first 50 subscribers: the first year for</span> <span class="price-offer ltr">59,000 IQD</span> <s class="was ltr">79,000</s><span class="ar">، و6 أشهر بـ</span><span class="msa">، وستة أشهر بسعر</span><span class="en">, and 6 months for</span> <span class="price-offer ltr">39,000 IQD</span> <s class="was ltr">49,000</s><!-- OWNER: offer price --><span class="ar">.</span><span class="msa">.</span><span class="en">.</span><br>
+    <small class="offer-usd"><span class="ar">من برّه العراق: </span><span class="msa">من خارج العراق: </span><span class="en">Outside Iraq: </span><span class="ltr">40 USD / 28 USD</span><!-- OWNER: offer price --><span class="ar"> · العرض يخلص من تخلص المقاعد.</span><span class="msa"> · ينتهي العرض بانتهاء المقاعد.</span><span class="en"> · The offer ends when the places run out.</span></small></p>
   </div>
   <div class="seats"><b class="ltr">50<!-- OWNER: seats left --></b><small><span class="ar">مقعد باقي من 50</span><span class="msa">مقعدًا متبقيًا من 50</span><span class="en">places left of 50</span></small></div>
 </section>
 
 <!-- ===================== the plan ===================== -->
-<section class="plan" id="plan">
+<section class="tiers" id="plan">
   <div class="card">
+    <div class="nm"><span class="pro">PRO</span><span class="ar">اشتراك 6 أشهر</span><span class="msa">اشتراك 6 أشهر</span><span class="en">6 months</span></div>
+    <div class="amount"><span class="price">49,000 IQD</span><!-- OWNER: price --><small><span class="ar">/ 6 أشهر</span><span class="msa">/ 6 أشهر</span><span class="en">/ 6 months</span></small></div>
+    <div class="usd"><span class="ar">من برّه العراق:</span><span class="msa">من خارج العراق:</span><span class="en">Outside Iraq:</span> <span class="price-usd">35 USD</span><!-- OWNER: price in USD --></div>
+    <ul>
+      <li><span class="ar">كل أدوات PRO الـ12</span><span class="msa">جميع أدوات PRO الاثنتي عشرة</span><span class="en">All 12 PRO tools</span></li>
+      <li><span class="ar">6 أشهر كاملة من يوم إصدار الكود</span><span class="msa">ستة أشهر كاملة من يوم إصدار الرمز</span><span class="en">6 full months from the day the code is issued</span></li>
+      <li><span class="ar">كل التحديثات خلال المدة، بدون كود جديد</span><span class="msa">جميع التحديثات خلال المدة، دون رمز جديد</span><span class="en">All updates during the period, no new code</span></li>
+      <li><span class="ar">وصل تفعيل رسمي ودعم بالواتساب والإيميل</span><span class="msa">إيصال تفعيل رسمي ودعم عبر واتساب والبريد</span><span class="en">An official receipt, support on WhatsApp and e-mail</span></li>
+      <li><span class="ar">التفعيل يشتغل بدون إنترنت</span><span class="msa">التفعيل يعمل دون إنترنت</span><span class="en">Activation works offline</span></li>
+    </ul>
+    <a class="btn ghost" href="#activate"><span class="ar">شلون أشترك؟</span><span class="msa">كيف أشترك؟</span><span class="en">How to subscribe</span> <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="card best">
+    <span class="badge"><span class="ar">الأوفر ⭐</span><span class="msa">الأوفر ⭐</span><span class="en">Best value ⭐</span></span>
     <div class="nm"><span class="pro">PRO</span><span class="ar">اشتراك سنوي</span><span class="msa">اشتراك سنوي</span><span class="en">Yearly</span></div>
-    <div class="amount"><span class="price">— IQD</span><!-- OWNER: price --><small><span class="ar">/ سنة</span><span class="msa">/ سنة</span><span class="en">/ year</span></small></div>
-    <div class="usd"><span class="ar">من برّه العراق:</span><span class="msa">من خارج العراق:</span><span class="en">Outside Iraq:</span> <span class="price-usd">— USD</span><!-- OWNER: price in USD --></div>
+    <div class="amount"><span class="price">79,000 IQD</span><!-- OWNER: price --><small><span class="ar">/ سنة</span><span class="msa">/ سنة</span><span class="en">/ year</span></small></div>
+    <div class="save"><span class="ar">توفّر 19,000 دينار عن 6 أشهر مرتين</span><span class="msa">توفّر 19,000 دينار مقارنة بستة أشهر مرتين</span><span class="en">Save 19,000 IQD vs two 6-month periods</span><!-- OWNER: saving --></div>
+    <div class="usd"><span class="ar">من برّه العراق:</span><span class="msa">من خارج العراق:</span><span class="en">Outside Iraq:</span> <span class="price-usd">55 USD</span><!-- OWNER: price in USD --></div>
     <ul>
       <li><span class="ar">كل أدوات PRO الـ12</span><span class="msa">جميع أدوات PRO الاثنتي عشرة</span><span class="en">All 12 PRO tools</span></li>
       <li><span class="ar">سنة كاملة من يوم إصدار الكود</span><span class="msa">سنة كاملة من يوم إصدار الرمز</span><span class="en">One full year from the day the code is issued</span></li>
-      <li><span class="ar">كل التحديثات خلال السنة، بدون كود جديد</span><span class="msa">جميع التحديثات خلال السنة، دون رمز جديد</span><span class="en">All updates during the year, no new code</span></li>
+      <li><span class="ar">كل التحديثات خلال المدة، بدون كود جديد</span><span class="msa">جميع التحديثات خلال المدة، دون رمز جديد</span><span class="en">All updates during the period, no new code</span></li>
       <li><span class="ar">وصل تفعيل رسمي ودعم بالواتساب والإيميل</span><span class="msa">إيصال تفعيل رسمي ودعم عبر واتساب والبريد</span><span class="en">An official receipt, support on WhatsApp and e-mail</span></li>
       <li><span class="ar">التفعيل يشتغل بدون إنترنت</span><span class="msa">التفعيل يعمل دون إنترنت</span><span class="en">Activation works offline</span></li>
     </ul>
     <a class="btn" href="#activate"><span class="ar">شلون أشترك؟</span><span class="msa">كيف أشترك؟</span><span class="en">How to subscribe</span> <span aria-hidden="true">↓</span></a>
   </div>
+</section>
 
+<section class="plan inc-only">
   <div class="inc">
     <h3><span class="pro">PRO</span><span class="ar">الـ12 أداة اللي ينفتحن بالاشتراك</span><span class="msa">الأدوات الاثنتا عشرة التي يفتحها الاشتراك</span><span class="en">The 12 tools the subscription opens</span></h3>
     <div class="chips">
@@ -280,7 +312,7 @@ footer img{width:22px;height:22px;border-radius:5px;vertical-align:-6px;margin-i
       <span class="chip"><b>CTRANS</b><span class="ar">تحويل الإحداثيات</span><span class="msa">تحويل الإحداثيات</span><span class="en">Coord Transform</span></span>
       <span class="chip"><b>GEOUTM</b><span class="ar">جغرافي ↔ UTM</span><span class="msa">جغرافي ↔ UTM</span><span class="en">Geo ↔ UTM, KML</span></span>
       <span class="chip"><b>SREPORT</b><span class="ar">تقرير التصميم مقابل الحقل</span><span class="msa">تقرير التصميم مقابل الرفع</span><span class="en">Survey Report</span></span>
-      <span class="chip"><b>CBM</b><span class="ar">مكتبة البنج مارك</span><span class="msa">مكتبة النقاط المرجعية</span><span class="en">Benchmark Manager</span></span>
+      <span class="chip"><b>CBM</b><span class="ar">مكتبة البنش مارك</span><span class="msa">مكتبة النقاط المرجعية</span><span class="en">Benchmark Manager</span></span>
       <span class="chip"><b>CNOTE</b><span class="ar">ملاحظات على الرسم</span><span class="msa">ملاحظات على الرسم</span><span class="en">Object Notes</span></span>
       <span class="chip"><b>CSEL</b><span class="ar">تحديد ذكي</span><span class="msa">تحديد ذكي</span><span class="en">Survey Select</span></span>
       <span class="chip"><b>CROUTE</b><span class="ar">مسار الأنابيب</span><span class="msa">مسار خط الأنابيب</span><span class="en">Pipeline Survey</span></span>
@@ -359,7 +391,7 @@ footer img{width:22px;height:22px;border-radius:5px;vertical-align:-6px;margin-i
 
 <h2 id="facts"><span class="n">3</span><span class="ar">لازم تعرف</span><span class="msa">معلومات مهمّة</span><span class="en">Good to know</span></h2>
 <div class="facts">
-  <div class="fact"><b><span class="ar">من تخلص السنة</span><span class="msa">عند انتهاء السنة</span><span class="en">When the year ends</span></b><span><span class="ar">بس أدوات PRO توگف. الأدوات المجانية ورسوماتك كلها سليمة. جدّد بكود جديد وكمّل.</span><span class="msa">تتوقف أدوات PRO فقط، وتبقى الأدوات المجانية ورسوماتك سليمة. جدّد برمز جديد وتابع.</span><span class="en">Only the PRO tools stop; the free tools and your drawings are untouched. Renew with a new code and go on.</span></span></div>
+  <div class="fact"><b><span class="ar">من تخلص المدة</span><span class="msa">عند انتهاء المدة</span><span class="en">When the period ends</span></b><span><span class="ar">بس أدوات PRO توگف. الأدوات المجانية ورسوماتك كلها سليمة. جدّد بكود جديد وكمّل.</span><span class="msa">تتوقف أدوات PRO فقط، وتبقى الأدوات المجانية ورسوماتك سليمة. جدّد برمز جديد وتابع.</span><span class="en">Only the PRO tools stop; the free tools and your drawings are untouched. Renew with a new code and go on.</span></span></div>
   <div class="fact"><b><span class="ar">الكود لحاسبتك</span><span class="msa">الرمز لحاسوبك</span><span class="en">The code is for your computer</span></b><span><span class="ar">إذا بدّلت الحاسبة أو سوّيت فورمات، دزلنا رقم الحاسبة الجديد ويا كودك القديم ونرتّبها.</span><span class="msa">إذا غيّرت الحاسوب أو أعدت تهيئته، أرسل المعرّف الجديد مع رمزك القديم ونرتّب الأمر.</span><span class="en">New computer or a reset? Send the new Computer ID with your old code and we sort it out.</span></span></div>
   <div class="fact"><b><span class="ar">التحديثات</span><span class="msa">التحديثات</span><span class="en">Updates</span></b><span><span class="ar">نصّب النسخ الجديدة عادي، التفعيل يبقى وما تحتاج كود جديد.</span><span class="msa">ثبّت الإصدارات الجديدة كالمعتاد، يبقى التفعيل ولا تحتاج إلى رمز جديد.</span><span class="en">Install new versions as usual: the activation stays, no new code needed.</span></span></div>
   <div class="fact"><b><span class="ar">النسخة الأصلية بس</span><span class="msa">النسخة الأصلية فقط</span><span class="en">Only the original copy</span></b><span><span class="ar">نزّل الأدوات بس من القناة أو رابطنا المباشر. النسخ المعدّلة ممكن تطلع حسابات غلط بدون ما تحس.</span><span class="msa">احصل على الأدوات من القناة أو رابطنا المباشر فقط. النسخ المعدّلة قد تعطي حسابات خاطئة دون أن تلاحظ.</span><span class="en">Get the tools only from the channel or our direct link. Modified copies can give wrong results without you noticing.</span></span></div>
