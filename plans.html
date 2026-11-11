@@ -36,6 +36,8 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,"Noto Sans Arabic","Noto Sans",Arial,sans-serif;font-size:15px;line-height:1.75}
 a{color:#9A7400}
 [hidden]{display:none!important}
+.ask{display:flex;gap:14px;align-items:flex-start;margin:18px 0 0;padding:16px 18px;border-radius:12px;background:linear-gradient(100deg,#2A2410,#11161C 70%);color:#F3EBD0;border:1px solid #4a3d10}.ask .ic{font-size:26px;line-height:1}.ask .h{font-size:18px;color:#F5C518}.ask p{margin:6px 0 10px}.ask-btns{display:flex;flex-wrap:wrap;gap:10px}
+
 code,.ltr{direction:ltr;unicode-bidi:isolate}
 code{background:#F1F4F7;border-radius:4px;padding:0 6px;font-family:Consolas,"DejaVu Sans Mono",monospace;font-size:13px;white-space:nowrap}
 
@@ -256,53 +258,48 @@ footer img{width:22px;height:22px;border-radius:5px;vertical-align:-6px;margin-i
 <main class="dir"><div class="page">
 
 <h1><span class="ar">الأسعار والاشتراك</span><span class="msa">الأسعار والاشتراك</span><span class="en">Price &amp; plans</span></h1>
-<p class="lead"><span class="ar">8 أدوات مجانية دائماً، و12 أداة <b>PRO</b> بتجربة 30 يوم ببلاش. بعد التجربة، اشتراك 6 أشهر أو سنة يفتحلك كل أدوات PRO.</span><span class="msa">8 أدوات مجانية دائمًا، و12 أداة <b>PRO</b> مع تجربة مجانية لمدة 30 يومًا. بعد التجربة، اشتراك لستة أشهر أو لسنة يفتح جميع أدوات PRO.</span><span class="en">8 tools are free forever, and 12 <b>PRO</b> tools come with a free 30-day trial. After the trial, a 6-month or a yearly subscription opens all the PRO tools.</span></p>
-
-<!-- ===================== OWNER: launch offer =====================
-     To HIDE the offer: change   <section class="offer" id="offer">   to   <section class="offer" id="offer" hidden>
-     To SHOW it again: remove the word  hidden
--->
-<section class="offer" id="offer" hidden>
-  <div class="ic" aria-hidden="true">🎉</div>
-  <div class="tx">
-    <b class="h"><span class="ar">عرض الإطلاق</span><span class="msa">عرض الإطلاق</span><span class="en">Launch offer</span></b>
-    <p><span class="ar">لأول 50 مشترك: السنة الأولى بـ</span><span class="msa">لأول 50 مشتركًا: السنة الأولى بسعر</span><span class="en">For the first 50 subscribers: the first year for</span> <span class="price-offer ltr">59,000 IQD</span> <s class="was ltr">79,000</s><span class="ar">، و6 أشهر بـ</span><span class="msa">، وستة أشهر بسعر</span><span class="en">, and 6 months for</span> <span class="price-offer ltr">39,000 IQD</span> <s class="was ltr">49,000</s><!-- OWNER: offer price --><span class="ar">.</span><span class="msa">.</span><span class="en">.</span><br>
-    <small class="offer-usd"><span class="ar">من برّه العراق: </span><span class="msa">من خارج العراق: </span><span class="en">Outside Iraq: </span><span class="ltr">40 USD / 28 USD</span><!-- OWNER: offer price --><span class="ar"> · العرض يخلص من تخلص المقاعد.</span><span class="msa"> · ينتهي العرض بانتهاء المقاعد.</span><span class="en"> · The offer ends when the places run out.</span></small></p>
-  </div>
-  <div class="seats"><b class="ltr">50<!-- OWNER: seats left --></b><small><span class="ar">مقعد باقي من 50</span><span class="msa">مقعدًا متبقيًا من 50</span><span class="en">places left of 50</span></small></div>
-</section>
+<p class="lead"><span class="ar">أكثر من 20 أداة: 9 مجانية دائماً، و13 أداة <b>PRO</b> بتجربة 30 يوم ببلاش. بعد التجربة، اشتراك 6 أشهر أو سنة يفتحلك كل أدوات PRO.</span><span class="msa">أكثر من 20 أداة: 9 أدوات مجانية دائمًا، و13 أداة <b>PRO</b> مع تجربة مجانية لمدة 30 يومًا. بعد التجربة، اشتراك لستة أشهر أو لسنة يفتح جميع أدوات PRO.</span><span class="en">More than 20 tools: 9 are free forever, and 13 <b>PRO</b> tools come with a free 30-day trial. After the trial, a 6-month or a yearly subscription opens all the PRO tools.</span></p>
 
 <!-- ===================== the plan ===================== -->
 <section class="tiers" id="plan">
   <div class="card">
     <div class="nm"><span class="pro">PRO</span><span class="ar">اشتراك 6 أشهر</span><span class="msa">اشتراك 6 أشهر</span><span class="en">6 months</span></div>
-    <div class="amount"><span class="price">49,000 IQD</span><!-- OWNER: price --><small><span class="ar">/ 6 أشهر</span><span class="msa">/ 6 أشهر</span><span class="en">/ 6 months</span></small></div>
-    <div class="usd"><span class="ar">من برّه العراق:</span><span class="msa">من خارج العراق:</span><span class="en">Outside Iraq:</span> <span class="price-usd">35 USD</span><!-- OWNER: price in USD --></div>
     <ul>
-      <li><span class="ar">كل الـ12 أداة <bdi dir="ltr">PRO</bdi></span><span class="msa">جميع أدوات PRO الاثنتي عشرة</span><span class="en">All 12 PRO tools</span></li>
+      <li><span class="ar">كل أدوات <bdi dir="ltr">PRO</bdi> (13 أداة)</span><span class="msa">جميع أدوات PRO (13 أداة)</span><span class="en">All 13 PRO tools</span></li>
       <li><span class="ar">6 أشهر كاملة من يوم إصدار الكود</span><span class="msa">ستة أشهر كاملة من يوم إصدار الرمز</span><span class="en">6 full months from the day the code is issued</span></li>
       <li><span class="ar">كل التحديثات خلال المدة، بدون كود جديد</span><span class="msa">جميع التحديثات خلال المدة، دون رمز جديد</span><span class="en">All updates during the period, no new code</span></li>
       <li><span class="ar">وصل تفعيل رسمي ودعم بالواتساب والإيميل</span><span class="msa">إيصال تفعيل رسمي ودعم عبر واتساب والبريد</span><span class="en">An official receipt, support on WhatsApp and e-mail</span></li>
       <li><span class="ar">التفعيل يشتغل بدون إنترنت</span><span class="msa">التفعيل يعمل دون إنترنت</span><span class="en">Activation works offline</span></li>
     </ul>
-    <a class="btn ghost" href="#activate"><span class="ar">شلون أشترك؟</span><span class="msa">كيف أشترك؟</span><span class="en">How to subscribe</span> <span aria-hidden="true">↓</span></a>
+    <a class="btn ghost" href="#price"><span class="ar">شلون أشترك؟</span><span class="msa">كيف أشترك؟</span><span class="en">How to subscribe</span> <span aria-hidden="true">↓</span></a>
   </div>
   <div class="card best">
     <span class="badge"><span class="ar">الأوفر ⭐</span><span class="msa">الأوفر ⭐</span><span class="en">Best value ⭐</span></span>
     <div class="nm"><span class="pro">PRO</span><span class="ar">اشتراك سنوي</span><span class="msa">اشتراك سنوي</span><span class="en">Yearly</span></div>
-    <div class="amount"><span class="price">79,000 IQD</span><!-- OWNER: price --><small><span class="ar">/ سنة</span><span class="msa">/ سنة</span><span class="en">/ year</span></small></div>
-    <div class="save"><span class="ar">توفّر 19,000 دينار عن 6 أشهر مرتين</span><span class="msa">توفّر 19,000 دينار مقارنة بستة أشهر مرتين</span><span class="en">Save 19,000 IQD vs two 6-month periods</span><!-- OWNER: saving --></div>
-    <div class="usd"><span class="ar">من برّه العراق:</span><span class="msa">من خارج العراق:</span><span class="en">Outside Iraq:</span> <span class="price-usd">55 USD</span><!-- OWNER: price in USD --></div>
     <ul>
-      <li><span class="ar">كل الـ12 أداة <bdi dir="ltr">PRO</bdi></span><span class="msa">جميع أدوات PRO الاثنتي عشرة</span><span class="en">All 12 PRO tools</span></li>
+      <li><span class="ar">كل أدوات <bdi dir="ltr">PRO</bdi> (13 أداة)</span><span class="msa">جميع أدوات PRO (13 أداة)</span><span class="en">All 13 PRO tools</span></li>
       <li><span class="ar">سنة كاملة من يوم إصدار الكود</span><span class="msa">سنة كاملة من يوم إصدار الرمز</span><span class="en">One full year from the day the code is issued</span></li>
       <li><span class="ar">كل التحديثات خلال المدة، بدون كود جديد</span><span class="msa">جميع التحديثات خلال المدة، دون رمز جديد</span><span class="en">All updates during the period, no new code</span></li>
       <li><span class="ar">وصل تفعيل رسمي ودعم بالواتساب والإيميل</span><span class="msa">إيصال تفعيل رسمي ودعم عبر واتساب والبريد</span><span class="en">An official receipt, support on WhatsApp and e-mail</span></li>
       <li><span class="ar">التفعيل يشتغل بدون إنترنت</span><span class="msa">التفعيل يعمل دون إنترنت</span><span class="en">Activation works offline</span></li>
     </ul>
-    <a class="btn" href="#activate"><span class="ar">شلون أشترك؟</span><span class="msa">كيف أشترك؟</span><span class="en">How to subscribe</span> <span aria-hidden="true">↓</span></a>
+    <a class="btn" href="#price"><span class="ar">شلون أشترك؟</span><span class="msa">كيف أشترك؟</span><span class="en">How to subscribe</span> <span aria-hidden="true">↓</span></a>
   </div>
 </section>
+
+<!-- ===================== ask for the price (Ali 11-11: no prices on the page) ===================== -->
+<section class="ask" id="price">
+  <div class="ic" aria-hidden="true">💬</div>
+  <div class="tx">
+    <b class="h"><span class="ar">اعرف السعر</span><span class="msa">اعرف السعر</span><span class="en">Ask for the price</span></b>
+    <p><span class="ar">دزلنا كلمة <b>«اشتراك»</b> على الإيميل، ونرسلك الأسعار وطريقة الدفع بسرعة.</span><span class="msa">أرسل لنا كلمة <b>«اشتراك»</b> على البريد الإلكتروني، ونرسل لك الأسعار وطريقة الدفع بسرعة.</span><span class="en">Send us the word <b>"subscribe"</b> by e-mail and we will send you the prices and how to pay, fast.</span></p>
+    <div class="ask-btns">
+      <a class="btn" href="mailto:eng.alicadsurvey@gmail.com?subject=%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83"><span class="ar">دز «اشتراك»</span><span class="msa">أرسل «اشتراك»</span><span class="en">Send "subscribe"</span> <span class="ltr">· eng.alicadsurvey@gmail.com</span></a>
+      <a class="btn ghost" href="https://cadandsurvey.com/pricing.html" target="_blank" rel="noopener"><span class="ar">صفحة الأسعار بالموقع</span><span class="msa">صفحة الأسعار في الموقع</span><span class="en">Pricing on our website</span> <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
 
 <section class="plan inc-only">
   <div class="inc">
@@ -365,7 +362,7 @@ footer img{width:22px;height:22px;border-radius:5px;vertical-align:-6px;margin-i
       <div class="kv">
         <div><span><span class="ar">اسم المستلم</span><span class="msa">اسم المستلم</span><span class="en">Receiver name</span></span><span class="nm-row"><span class="v wu-name">Ali Dakhil</span><button type="button" class="cp" data-copy="Ali Dakhil"><span class="ar">نسخ</span><span class="msa">نسخ</span><span class="en">Copy</span></button></span><!-- OWNER: WU name (the text AND data-copy, exactly as the sender must write it) --></div>
         <div><span><span class="ar">البلد</span><span class="msa">البلد</span><span class="en">Country</span></span><span class="v"><span class="ar">العراق</span><span class="msa">العراق</span><span class="en">Iraq</span></span></div>
-        <div><span><span class="ar">المبلغ</span><span class="msa">المبلغ</span><span class="en">Amount</span></span><span class="v"><span class="ar">السعر بالدولار فوق</span><span class="msa">السعر بالدولار أعلاه</span><span class="en">The USD price above</span></span></div>
+        <div><span><span class="ar">المبلغ</span><span class="msa">المبلغ</span><span class="en">Amount</span></span><span class="v"><span class="ar">السعر الي نرسله إلك بالدولار</span><span class="msa">السعر الذي نرسله إليك بالدولار</span><span class="en">The USD price we send you</span></span></div>
         <div><span><span class="ar">رسوم التحويل</span><span class="msa">رسوم التحويل</span><span class="en">Transfer fee</span></span><span class="v"><span class="ar">على المرسل</span><span class="msa">يدفعها المرسل</span><span class="en">Paid by the sender</span></span></div>
       </div>
       <ul class="dot">
